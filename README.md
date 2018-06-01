@@ -1,5 +1,7 @@
 # The Do List - A MVVM Architecture To-Do List built with RxSwift
 
+![Example](./the-do-list-app.gif)
+
 Features:
 - MVVM Architecture
 - Undo/Redo functionality for all CRUD operations
