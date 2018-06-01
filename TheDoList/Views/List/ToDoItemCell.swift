@@ -9,9 +9,7 @@ class ToDoItemCell: UICollectionViewCell {
     
     var model: ToDoItem! {
         didSet {
-            if false == titleTextView.isFirstResponder {
-                titleTextView.text = model.title
-            }
+            updateView()
         }
     }
     var onItemTitleChanged: PublishSubject<(ToDoItem, NSRange, String)> = PublishSubject()
@@ -26,6 +24,22 @@ class ToDoItemCell: UICollectionViewCell {
         super.prepareForReuse()
         
         deselect()
+    }
+    
+    func updateView() {
+        
+        // Update title text view an maintain cursor position
+        var selectionRange = titleTextView.selectedRange
+        let previousText: String = titleTextView.text
+        titleTextView.text = model.title
+        if titleTextView.isFirstResponder {
+            if previousText.count < model.title.count {
+                selectionRange.location += 1
+            } else {
+                selectionRange.location -= 1
+            }
+            titleTextView.selectedRange = selectionRange
+        }
     }
     
     func select() {
@@ -55,7 +69,7 @@ extension ToDoItemCell: UITextViewDelegate {
             return false
         }
         onItemTitleChanged.onNext((model, range, text))
-        return true
+        return false
     }
 
 }

@@ -5,7 +5,7 @@ class Action<R: Resource> {
     enum ActionType {
         case add
         case remove(Int)
-        case editTitle(NSRange, String)
+        case editTitle([TextChange])
     }
     let type: ActionType
     let data: R
@@ -76,7 +76,7 @@ class ToDoListViewModel {
         .disposed(by: disposeBag)
         
         inputs.onItemTitleChange.bind { [weak self] todoItem, range, text in
-            self?.applyNew(Action<ToDoItem>(type: .editTitle(range, text), data: todoItem) )
+            self?.applyNew(Action<ToDoItem>(type: .editTitle([(range, text)]), data: todoItem) )
         }
         .disposed(by: disposeBag)
         
@@ -132,6 +132,7 @@ class ToDoListViewModel {
             history += outputs.history.value[0...historyIndex]
         }
         history.append(action)
+        history = concatenateActions(history)
         outputs.history.value = history
         outputs.historyIndex.value = history.count - 1
     }
@@ -142,15 +143,14 @@ class ToDoListViewModel {
             resourceManager.prepend(action.data)
         case .remove:
             resourceManager.delete(action.data)
-        case .editTitle(let range, let text):
+        case .editTitle(let changes):
             var newData = action.data
-            newData.title = (newData.title as NSString).replacingCharacters(in: range, with: text)
+            newData.title = apply(textChanges: changes, to: newData.title)
             resourceManager.update(newData)
         }
     }
     
     private func reverse(action: Action<ToDoItem>) {
-        
         switch action.type {
         case .add:
             resourceManager.delete(action.data)

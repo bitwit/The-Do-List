@@ -22,6 +22,7 @@
 		753BDDCF20C0852D00E2A04C /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753BDDCE20C0852D00E2A04C /* Swift+Extensions.swift */; };
 		753BDDD320C0A32600E2A04C /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753BDDD220C0A32600E2A04C /* HistoryTableViewController.swift */; };
 		753BDDD520C0A4D100E2A04C /* SplitContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753BDDD420C0A4D100E2A04C /* SplitContainerViewController.swift */; };
+		75E2D90120C1BCC2002A0A45 /* RangeConcatenation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2D90020C1BCC2002A0A45 /* RangeConcatenation.swift */; };
 		75F0F47020BCAFE0007B1E77 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0F46F20BCAFE0007B1E77 /* WebService.swift */; };
 		75F0F47320BCB089007B1E77 /* AppEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0F47220BCB089007B1E77 /* AppEnv.swift */; };
 		75F0F47520BCB205007B1E77 /* ToDoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0F47420BCB205007B1E77 /* ToDoListViewModel.swift */; };
@@ -61,6 +62,7 @@
 		753BDDCE20C0852D00E2A04C /* Swift+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Extensions.swift"; sourceTree = "<group>"; };
 		753BDDD220C0A32600E2A04C /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		753BDDD420C0A4D100E2A04C /* SplitContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitContainerViewController.swift; sourceTree = "<group>"; };
+		75E2D90020C1BCC2002A0A45 /* RangeConcatenation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeConcatenation.swift; sourceTree = "<group>"; };
 		75F0F46F20BCAFE0007B1E77 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		75F0F47220BCB089007B1E77 /* AppEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnv.swift; sourceTree = "<group>"; };
 		75F0F47420BCB205007B1E77 /* ToDoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewModel.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				753BDDCC20C081DF00E2A04C /* DiffCalculator.swift */,
 				753BDDCE20C0852D00E2A04C /* Swift+Extensions.swift */,
+				75E2D90020C1BCC2002A0A45 /* RangeConcatenation.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				75F0F47520BCB205007B1E77 /* ToDoListViewModel.swift in Sources */,
 				753BDDCA20C07E2C00E2A04C /* GenericDataSource.swift in Sources */,
 				7517E1C120BCAAF900E772D1 /* ListViewController.swift in Sources */,
+				75E2D90120C1BCC2002A0A45 /* RangeConcatenation.swift in Sources */,
 				753BDDC620BCBEED00E2A04C /* ToDoItemCell.swift in Sources */,
 				7517E1BF20BCAAF900E772D1 /* AppDelegate.swift in Sources */,
 				753BDDD520C0A4D100E2A04C /* SplitContainerViewController.swift in Sources */,
